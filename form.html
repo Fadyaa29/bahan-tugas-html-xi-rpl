@@ -5,147 +5,102 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up Form</title>
-    <style>
-        /* Reset CSS */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        /* Body styling */
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f7f9fc;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 20px;
-        }
-
-        /* Main form container styling */
-        .form-container {
-            background-color: #fff;
-            padding: 30px 40px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            width: 100%;
-            max-width: 500px;
-        }
-
-        /* Heading styling */
-        h1, h2 {
-            text-align: center;
-            color: #333;
-            margin-bottom: 20px;
-        }
-
-        h1 {
-            font-size: 2rem;
-            color: #0073e6;
-        }
-
-        h2 {
-            font-size: 1.5rem;
-            color: #333;
-        }
-
-        /* Label styling */
-        label {
-            display: block;
-            font-weight: bold;
-            margin-top: 15px;
-            color: #555;
-        }
-
-        /* Input field styling */
-        input[type="text"], select, textarea {
-            width: 100%;
-            padding: 10px;
-            margin-top: 5px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 1rem;
-        }
-
-        /* Radio and checkbox styling */
-        input[type="radio"], input[type="checkbox"] {
-            margin-right: 5px;
-        }
-
-        /* Submit button styling */
-        input[type="submit"] {
-            background-color: #0073e6;
-            color: #fff;
-            font-size: 1.1rem;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-            margin-top: 20px;
-        }
-
-        input[type="submit"]:hover {
-            background-color: #005bb5;
-        }
-
-        /* Spacing between elements */
-        .form-group {
-            margin-bottom: 15px;
-        }
-    </style>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
 </head>
-<body>
-    <div class="form-container">
-        <h1>Buat Account Baru</h1>
-        <h2>Sign Up Form</h2>
+<body class="bg-light">
 
-        <form action="welcome.html" method="post">
-            <div class="form-group">
-                <label for="first_name">First name:</label>
-                <input type="text" id="first_name" name="first_name">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">Media Online</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Features</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                </ul>
             </div>
+        </div>
+    </nav>
 
-            <div class="form-group">
-                <label for="last_name">Last name:</label>
-                <input type="text" id="last_name" name="last_name">
+    
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h1 class="text-center text-primary mb-4">Buat Account Baru</h1>
+                        <h2 class="text-center text-secondary">Sign Up Form</h2>
+                        <form action="welcome.html" method="post">
+                            <div class="mb-3">
+                                <label for="first_name" class="form-label">First Name</label>
+                                <input type="text" class="form-control" id="first_name" name="first_name" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="last_name" class="form-label">Last Name</label>
+                                <input type="text" class="form-control" id="last_name" name="last_name" required>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Gender</label>
+                                <div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" id="male" name="gender" value="Male" required>
+                                        <label class="form-check-label" for="male">Male</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" id="female" name="gender" value="Female">
+                                        <label class="form-check-label" for="female">Female</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="nationality" class="form-label">Nationality</label>
+                                <select class="form-select" id="nationality" name="nationality">
+                                    <option value="Indonesia">Indonesia</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Language Spoken</label>
+                                <div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="bahasa" name="language" value="Bahasa Indonesia">
+                                        <label class="form-check-label" for="bahasa">Bahasa Indonesia</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="english" name="language" value="English">
+                                        <label class="form-check-label" for="english">English</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="other" name="language" value="Other">
+                                        <label class="form-check-label" for="other">Other</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="bio" class="form-label">Bio</label>
+                                <textarea class="form-control" id="bio" name="bio" rows="5" required></textarea>
+                            </div>
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-primary btn-lg">Sign Up</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
-
-            <div class="form-group">
-                <label>Gender:</label>
-                <input type="radio" id="male" name="gender" value="Male">
-                <label for="male">Male</label>
-                <input type="radio" id="female" name="gender" value="Female">
-                <label for="female">Female</label>
-            </div>
-
-            <div class="form-group">
-                <label for="nationality">Nationality:</label>
-                <select id="nationality" name="nationality">
-                    <option value="Indonesia">Indonesia</option>
-                    <option value="Other">Other</option>
-                </select>
-            </div>
-
-            <div class="form-group">
-                <label>Language Spoken:</label>
-                <input type="checkbox" id="bahasa" name="language" value="Bahasa Indonesia">
-                <label for="bahasa">Bahasa Indonesia</label>
-                <input type="checkbox" id="english" name="language" value="English">
-                <label for="english">English</label>
-                <input type="checkbox" id="other" name="language" value="Other">
-                <label for="other">Other</label>
-            </div>
-
-            <div class="form-group">
-                <label for="bio">Bio:</label>
-                <textarea id="bio" name="bio" rows="5" cols="30"></textarea>
-            </div>
-
-            <input type="submit" value="Sign Up">
-        </form>
+        </div>
     </div>
+
+    
+    <footer class="bg-primary text-white text-center py-3">
+        <p class="mb-0">&copy; 2024 Media Online. All Rights Reserved.</p>
+    </footer>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
